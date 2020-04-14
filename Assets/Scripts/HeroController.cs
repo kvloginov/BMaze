@@ -13,10 +13,17 @@ public class HeroController : MonoBehaviour
     private Rigidbody2D rb;
 
     private Vector2 moveSpeed;
+    private Vector2 heroPositionOnScreen;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        heroPositionOnScreen = GetHeroPositionOnScreen();
+    }
+
+    private  Vector2 GetHeroPositionOnScreen()
+    {
+        return Camera.main.WorldToScreenPoint(rb.position);
     }
 
     public float GetMoveSpeed()
@@ -24,14 +31,14 @@ public class HeroController : MonoBehaviour
         return moveSpeed.magnitude;
     }
 
-
     void Update()
     {
-        var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        heroPositionOnScreen = GetHeroPositionOnScreen();
+        var input = TouchController.GetMoveVector(heroPositionOnScreen).normalized;
 
-        moveSpeed = input.normalized * shiftSpeed + new Vector2(0, runSpeed);
+        moveSpeed = input * shiftSpeed + new Vector2(0, runSpeed);
     }
-
+ 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime);
