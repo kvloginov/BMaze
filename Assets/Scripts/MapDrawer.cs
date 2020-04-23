@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -25,13 +26,25 @@ public class MapDrawer : MonoBehaviour
     // тайлмап, на котором будем рисовать
     public Tilemap tilemap;
 
+    // Идол!
+    public GameObject idolPrefab;
+    // TODO придумать название
+    public int drawEverySec;
+    public int idolsInRow;
+
     void Start()
     {
-
+        InvokeRepeating("DrawIdols", 0, drawEverySec);
     }
 
-    // По-хорошему нужно отрисовывать редко, а не тысячу раз в секунду
     void Update()
+    {
+        var drawFrom = GetDrawFrom();
+
+        DrawTiles(drawFrom);
+    }
+
+    private Vector3Int GetDrawFrom()
     {
         var heroPos = hero.transform.position;
         Vector3Int center = new Vector3Int(
@@ -39,8 +52,29 @@ public class MapDrawer : MonoBehaviour
             (int)Math.Floor(heroPos.y),
             z);
 
-        Vector3Int drawFrom = center - new Vector3Int(width / 2, -yOffset, 0);
+        return center - new Vector3Int(width / 2, -yOffset, 0);
+    }
 
+    // костыльное быстррое решение
+    private void DrawIdols()
+    {
+        var drawFrom = GetDrawFrom();
+
+        for(int i = 0; i < idolsInRow; i++)
+        {
+            float xShift = width * Random.value;
+            // MAgic number used :)
+            float yShift = yOffset * 0.5f * Random.value;
+            var idolPos = drawFrom + new Vector3(xShift, yShift, 0);
+            Instantiate(idolPrefab, idolPos, Quaternion.identity);
+        }
+        
+
+        Debug.Log("Dreaw IDOLS!1");
+    }
+
+    private void DrawTiles(Vector3Int drawFrom)
+    {
         Vector3Int boundsSize = new Vector3Int(width, 1, 1);
         var bounds = new BoundsInt(drawFrom, boundsSize);
 
@@ -48,7 +82,7 @@ public class MapDrawer : MonoBehaviour
 
         if (!tilemap.HasTile(drawFrom))
         {
-            tilemap.SetTilesBlock(bounds, tileArray);    
+            tilemap.SetTilesBlock(bounds, tileArray);
         }
     }
 

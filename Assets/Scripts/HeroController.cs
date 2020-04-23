@@ -8,7 +8,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class HeroController : MonoBehaviour
 {
-    public float shiftSpeed;
+    public float shiftSpeedX;
+    public float shiftSpeedY;
     public float runSpeed;
     public Vector3 startPosition;
 
@@ -42,7 +43,7 @@ public class HeroController : MonoBehaviour
         heroPositionOnScreen = GetHeroPositionOnScreen();
         var input = TouchController.GetMoveVector(heroPositionOnScreen).normalized;
 
-        moveSpeed = input * shiftSpeed + new Vector2(0, runSpeed);
+        moveSpeed = input * shiftSpeedX + new Vector2(0, runSpeed);
     }
  
     void FixedUpdate()
