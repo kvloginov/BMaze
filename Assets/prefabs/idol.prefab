@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6663309375537603397}
   - component: {fileID: 6663309375537603394}
   - component: {fileID: 6663309375537603396}
+  - component: {fileID: -7539870131857022498}
   m_Layer: 0
   m_Name: idol
   m_TagString: SimpleEnemy
@@ -131,3 +132,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6875, y: 1.2022057}
   m_EdgeRadius: 0
+--- !u!114 &-7539870131857022498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663309375537603398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b499dbea341b743b2274294968c05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroTransform: {fileID: 0}
+  yOffset: 10

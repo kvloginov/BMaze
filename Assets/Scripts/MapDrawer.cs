@@ -30,17 +30,6 @@ public class MapDrawer : MonoBehaviour
     // тайлмап, на котором будем рисовать края уровня
     public Tilemap сollidebleTilemap;
 
-    // Идол!
-    public GameObject idolPrefab;
-    // TODO придумать название
-    public int drawEverySec;
-    public int idolsInRow;
-
-    void Start()
-    {
-        // убрать идолов в другой скрипт
-        //InvokeRepeating("DrawIdols", 0, drawEverySec);
-    }
 
     void Update()
     {
@@ -54,23 +43,7 @@ public class MapDrawer : MonoBehaviour
         var heroPos = hero.transform.position;
         int heroY = (int)Math.Floor(heroPos.y);
 
-
         return new Vector3Int(levelOptions.LevelStartX, heroY + yOffset, 0);
-    }
-
-    // костыльное быстррое решение
-    private void DrawIdols()
-    {
-        var drawFrom = GetDrawFrom();
-
-        for(int i = 0; i < idolsInRow; i++)
-        {
-            float xShift = (float)Math.Floor(levelOptions.GetWidth() * Random.value);
-            // MAgic number used :)
-            float yShift = (float)Math.Floor(yOffset * 0.5f * Random.value);
-            var idolPos = drawFrom + new Vector3(xShift, yShift, 0);
-            Instantiate(idolPrefab, idolPos, Quaternion.identity);
-        }
     }
 
     private void DrawTiles(Vector3Int drawFrom)

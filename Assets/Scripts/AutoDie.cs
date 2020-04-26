@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class AutoDie : MonoBehaviour
 {
-    void Start()
+
+    public Transform heroTransform;
+
+    // ищем игрока по имени "hero"
+    private Transform thisTransform;
+
+    public float yOffset;
+    
+    private void Start()
     {
-        //Destroy(gameObject);
+        thisTransform = GetComponent<Transform>();
+        
+        // скользкая штука 
+        heroTransform = GameObject.Find("hero").GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // TODO вместо этого сделать Queue с пулом идолов
+        if (thisTransform.position.y + yOffset < heroTransform.position.y)
+        {
+            Destroy(gameObject);
+        }
     }
 }
