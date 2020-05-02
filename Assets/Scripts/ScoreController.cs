@@ -8,12 +8,10 @@ public class ScoreController : MonoBehaviour
     [SerializeField]
     private int score = 0;
 
-    private Transform transform;
     private HeroController heroController;
 
     private void Start()
     {
-        transform = GetComponent<Transform>();
         heroController = GetComponent<HeroController>();
     }
 

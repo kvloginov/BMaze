@@ -47,11 +47,11 @@ public class IdolSpawner : MonoBehaviour
         for (int i = 0; i < idolsInRow; i++)
         {
             // +1 и -2 исключают появление идолов на краю 
-            float xShift = 1 + (float)Math.Floor((levelOptions.GetWidth() - 2) * Random.value);
+            float xShift = 1 + (float)Math.Round((levelOptions.GetWidth() - 2) * Random.value);
             // MAgic number used :)
-            float yShift = (float)Math.Floor(yOffset * 0.5f * Random.value);
+            float yShift = (float)Math.Round(yOffset * 0.5f * Random.value);
             var idolPos = drawFrom + new Vector3(xShift, yShift, 0);
-            Instantiate(idolPrefab, idolPos, Quaternion.identity);
+            Instantiate(idolPrefab, idolPos, Quaternion.identity, transform);
         }
     }
 }
