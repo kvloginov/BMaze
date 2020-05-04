@@ -17,10 +17,17 @@ public class MoveScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (moveDirection.Equals(MoveDirection.Left)) {
+        if (moveDirection.Equals(MoveDirection.Left)) 
+        {
             transform.position += new Vector3(-moveSpeed * Time.fixedDeltaTime, 0, 0);
-        } else if (moveDirection.Equals(MoveDirection.Right)) {
+        } 
+        else if (moveDirection.Equals(MoveDirection.Right)) 
+        {
             transform.position += new Vector3(moveSpeed * Time.fixedDeltaTime, 0, 0);
+        }
+        else if (moveDirection.Equals(MoveDirection.Down))
+        {
+            transform.position += new Vector3(0, -moveSpeed * Time.fixedDeltaTime, 0);
         }
 
         transform.Rotate(0, 0, rotationsPerSecond * Time.fixedDeltaTime * SEC_IN_MINUTE, Space.Self);

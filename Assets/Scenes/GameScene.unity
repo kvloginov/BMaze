@@ -3131,6 +3131,7 @@ MonoBehaviour:
   LevelStartX: -5
   LevelEndX: 5
   PixelsPerUnit: 16
+  MaxLevelScore: 1000
 --- !u!4 &720123238
 Transform:
   m_ObjectHideFlags: 0
@@ -3366,6 +3367,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bede5f255db8b41a4fbce9df3c86fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  potatoBoxPrefab: {fileID: 3939289614420349989, guid: b2178f224d5e4e742870eeac7d0281ca,
+    type: 3}
+  levelOptions: {fileID: 720123237}
+  heroTransform: {fileID: 1599335600}
+  yOffset: 8
+  throwDelayCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.6196198
+      inSlope: -1.115416
+      outSlope: -1.115416
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.5042038
+      inSlope: -1.115416
+      outSlope: -1.115416
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scoreController: {fileID: 1599335602}
+  cameraController: {fileID: 519420030}
+  potatoMoveDirections: 000000000200000003000000
 --- !u!1001 &1027426427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9311,6 +9344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.08677979
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428246555980144085, guid: 74f993682d87d08408c8647dc9e0daea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f993682d87d08408c8647dc9e0daea, type: 3}

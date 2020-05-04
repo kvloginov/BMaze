@@ -8,6 +8,10 @@ public class LevelOptions : MonoBehaviour
     public int LevelStartX;
     public int LevelEndX;
     public int PixelsPerUnit;
+    
+    [Header("Указывает максимально возможное кол-во очков, при котором игра перестанет усложняться по animation curves")]
+    [Tooltip("Указывает максимально возможное кол-во очков, при котором игра перестанет усложняться по animation curves")]
+    public int MaxLevelScore;
 
     // Start is called before the first frame update
     void Start()

@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 3730176479953430764
     second: spike_potato
+  - first:
+      213: -4633427002254362204
+    second: chest_one
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -146,7 +149,7 @@ TextureImporter:
         width: 32
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,6 +157,27 @@ TextureImporter:
       bones: []
       spriteID: ce82425cebf34c330800000000000000
       internalID: 3730176479953430764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chest_one
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 416
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9fcedb0b2c2bfb0800000000000000
+      internalID: -4633427002254362204
       vertices: []
       indices: 
       edges: []
