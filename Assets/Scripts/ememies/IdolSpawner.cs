@@ -13,8 +13,6 @@ public class IdolSpawner : MonoBehaviour
 
     public Transform heroTransform;
 
-    // Идол!
-    public GameObject idolPrefab;
     // TODO придумать название
     public int drawEverySec;
     public int idolsInRow;
@@ -25,11 +23,6 @@ public class IdolSpawner : MonoBehaviour
         InvokeRepeating("DrawIdols", 0, drawEverySec);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private Vector3Int GetDrawFrom()
     {
@@ -51,7 +44,7 @@ public class IdolSpawner : MonoBehaviour
             // MAgic number used :)
             float yShift = (float)Math.Round(yOffset * 0.5f * Random.value);
             var idolPos = drawFrom + new Vector3(xShift, yShift, 0);
-            Instantiate(idolPrefab, idolPos, Quaternion.identity, transform);
+            ObjectPooler.Instance.SpawnFromPool(ObjectPooler.TAG_IDOL, idolPos, Quaternion.identity);
         }
     }
 }

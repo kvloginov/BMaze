@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PotatoBoxController : MonoBehaviour
 {
-    public GameObject potatoPrefab;
+    //public GameObject potatoPrefab;
     public LevelOptions levelOptions;
 
     [Header("промежуток в секундах между картохами")]
@@ -37,7 +37,8 @@ public class PotatoBoxController : MonoBehaviour
 
     private void InstantiatePotato()
     {
-        GameObject potato = Instantiate(potatoPrefab, transform.position, Quaternion.identity, transform);
+        GameObject potato = ObjectPooler.Instance.SpawnFromPool(ObjectPooler.TAG_POTATO, transform.position, Quaternion.identity);
+        //GameObject potato = Instantiate(potatoPrefab, transform.position, Quaternion.identity, transform);
         MoveScript move = potato.GetComponent<MoveScript>();
     
         move.moveDirection = throwDirection;

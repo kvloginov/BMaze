@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoDie : MonoBehaviour
+public class AutoHide : MonoBehaviour
 {
 
     public Transform heroTransform;
@@ -22,10 +22,9 @@ public class AutoDie : MonoBehaviour
 
     void Update()
     {
-        // TODO вместо этого сделать Queue с пулом идолов
         if (thisTransform.position.y + yOffset < heroTransform.position.y)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

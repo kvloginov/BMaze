@@ -2108,6 +2108,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1732924847}
     m_Modifications:
+    - target: {fileID: -7539870131857022498, guid: 19159bb873eacaf4f8f28b016da43d8b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6663309375537603398, guid: 19159bb873eacaf4f8f28b016da43d8b,
         type: 3}
       propertyPath: m_Name
@@ -2266,7 +2271,7 @@ RectTransform:
   - {fileID: 951332334}
   - {fileID: 1134708289}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2833,7 +2838,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420034
 MonoBehaviour:
@@ -3144,7 +3149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948832167
 GameObject:
@@ -3367,11 +3372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bede5f255db8b41a4fbce9df3c86fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potatoBoxPrefab: {fileID: 3939289614420349989, guid: b2178f224d5e4e742870eeac7d0281ca,
-    type: 3}
   levelOptions: {fileID: 720123237}
   heroTransform: {fileID: 1599335600}
-  yOffset: 8
   throwDelayCurve:
     serializedVersion: 2
     m_Curve:
@@ -3532,7 +3534,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1116681878 stripped
 Transform:
@@ -3678,7 +3680,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206805400
 GameObject:
@@ -3727,7 +3729,7 @@ Transform:
   - {fileID: 315607720}
   - {fileID: 607366333}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1206805403
 MonoBehaviour:
@@ -4070,7 +4072,7 @@ RectTransform:
   m_Children:
   - {fileID: 399772099}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4457,7 +4459,7 @@ Transform:
   - {fileID: 1732924847}
   - {fileID: 997346884}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1599335593 stripped
 GameObject:
@@ -4617,10 +4619,8 @@ MonoBehaviour:
   levelOptions: {fileID: 720123237}
   yOffset: 20
   heroTransform: {fileID: 1599335600}
-  idolPrefab: {fileID: 6663309375537603398, guid: 19159bb873eacaf4f8f28b016da43d8b,
-    type: 3}
   drawEverySec: 1
-  idolsInRow: 4
+  idolsInRow: 2
 --- !u!1001 &1888786004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4696,6 +4696,62 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1888786004}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2027509202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027509204}
+  - component: {fileID: 2027509203}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2027509203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027509202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1463d3491c94f1c4e921b5876496a850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: potato
+    prefab: {fileID: 8279154053610143703, guid: c91e3a29eb904bd46b6a043e4f43dfb8,
+      type: 3}
+    size: 10
+  - tag: potato_box
+    prefab: {fileID: 3939289614420349989, guid: b2178f224d5e4e742870eeac7d0281ca,
+      type: 3}
+    size: 3
+  - tag: idol
+    prefab: {fileID: 6663309375537603398, guid: 19159bb873eacaf4f8f28b016da43d8b,
+      type: 3}
+    size: 30
+--- !u!4 &2027509204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027509202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085593214
 GameObject:
   m_ObjectHideFlags: 0
@@ -9273,7 +9329,7 @@ PrefabInstance:
     - target: {fileID: 3428246555980144073, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3428246555980144073, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}
@@ -9313,7 +9369,7 @@ PrefabInstance:
     - target: {fileID: 3428246555980144075, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}
       propertyPath: shiftSpeedY
-      value: 7.57
+      value: 7.42
       objectReference: {fileID: 0}
     - target: {fileID: 3428246555980144076, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}
@@ -9324,6 +9380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428246555980144078, guid: 74f993682d87d08408c8647dc9e0daea,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3428246555980144085, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}

@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
-using UnityEditor.UIElements;
-using UnityEditorInternal;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 public class PotatoBoxSpawner : MonoBehaviour
 {
-
-    public GameObject potatoBoxPrefab;
     public LevelOptions levelOptions;
 
     public Transform heroTransform;
@@ -45,7 +37,9 @@ public class PotatoBoxSpawner : MonoBehaviour
     // TODO проверить, не умрет ли герой соприкоснувшись с шипом до его создания
     private void InstantiatePotatoBox()
     {
-        GameObject potatoBox = Instantiate(potatoBoxPrefab, Vector3.zero, Quaternion.identity, transform);
+        //GameObject potatoBox = Instantiate(potatoBoxPrefab, Vector3.zero, Quaternion.identity, transform);
+        GameObject potatoBox = ObjectPooler.Instance.SpawnFromPool(ObjectPooler.TAG_POTATO_BOX, Vector3.zero, Quaternion.identity);
+
         PotatoBoxController boxController = potatoBox.GetComponent<PotatoBoxController>();
         boxController.scoreController = scoreController;
         boxController.levelOptions = levelOptions;

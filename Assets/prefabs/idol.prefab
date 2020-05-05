@@ -18,7 +18,7 @@ GameObject:
   m_TagString: SimpleEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6663309375537603399
 Transform:
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1833371985
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1751441831678967397, guid: a95224e45723b6540b901beff6a5e635,
     type: 3}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &6663309375537603394
 Rigidbody2D:
   serializedVersion: 4
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_Offset: {x: 0.014525235, y: -0.61080074}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.18}
     oldSize: {x: 1.6875, y: 2.65625}
     newSize: {x: 1.6875, y: 2.65625}
     adaptiveTilingThreshold: 0.5
