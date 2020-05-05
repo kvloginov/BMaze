@@ -214,7 +214,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 306100731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 388778813}
+        m_MethodName: OnMainMenuClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &306100731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,7 +2873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try Again
+  m_Text: TRY AGAIN
 --- !u!222 &494190051
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3057,7 +3068,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit game
+  m_Text: QUIT
 --- !u!222 &544484809
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3425,9 +3436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Main Menu
-
-'
+  m_Text: MENU
 --- !u!222 &948832170
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9561,7 +9570,7 @@ PrefabInstance:
     - target: {fileID: 3428246555980144075, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}
       propertyPath: runSpeed
-      value: 0
+      value: 7.73
       objectReference: {fileID: 0}
     - target: {fileID: 3428246555980144075, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}
@@ -9576,12 +9585,12 @@ PrefabInstance:
     - target: {fileID: 3428246555980144075, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}
       propertyPath: shiftSpeedX
-      value: 7.32
+      value: 7.48
       objectReference: {fileID: 0}
     - target: {fileID: 3428246555980144075, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}
       propertyPath: shiftSpeedY
-      value: 7.3
+      value: 2.27
       objectReference: {fileID: 0}
     - target: {fileID: 3428246555980144076, guid: 74f993682d87d08408c8647dc9e0daea,
         type: 3}

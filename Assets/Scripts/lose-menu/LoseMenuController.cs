@@ -26,6 +26,11 @@ public class LoseMenuController : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnMainMenuClick()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 
     public void CloseMenu()
     {
