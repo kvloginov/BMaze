@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -4633427002254362204
     second: chest_one
+  - first:
+      213: 178715321670162202
+    second: tomatoes_one
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -178,6 +181,27 @@ TextureImporter:
       bones: []
       spriteID: 4a9fcedb0b2c2bfb0800000000000000
       internalID: -4633427002254362204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomatoes_one
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 229
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17d11063acea7200800000000000000
+      internalID: 178715321670162202
       vertices: []
       indices: 
       edges: []

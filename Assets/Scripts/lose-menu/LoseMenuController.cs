@@ -21,14 +21,23 @@ public class LoseMenuController : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void OnExitClick()
+    {
+        Application.Quit();
+    }
+
 
     public void CloseMenu()
     {
         mainMenuObject.SetActive(false);
+        // хацк
+        Time.timeScale = 1;
     }
 
     public void InvokeMenu(int score) 
     {
+        // хацк
+        Time.timeScale = 0;
         SetScoreText(score);
         mainMenuObject.SetActive(true);
     }
