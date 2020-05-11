@@ -14,6 +14,8 @@ public class PotatoBoxSpawner : MonoBehaviour
     public ScoreController scoreController;
     public MainCameraController cameraController;
 
+    public float spawnersYOffset = 3;
+
     private float nextThrowTime = 0.0f;
 
     public MoveDirection[] potatoMoveDirections = new MoveDirection[] {MoveDirection.Left, MoveDirection.Right, MoveDirection.Down};
@@ -51,15 +53,15 @@ public class PotatoBoxSpawner : MonoBehaviour
         var viewRect = cameraController.GetViewRectInWorld();
         if (boxController.throwDirection == MoveDirection.Right) 
         {
-            potatoBox.transform.position = new Vector3(viewRect.xMin, viewRect.yMax, 0);
+            potatoBox.transform.position = new Vector3(levelOptions.LevelStartX + 1, viewRect.yMax + spawnersYOffset, 0);
         } 
         else if (boxController.throwDirection == MoveDirection.Left)
         {
-            potatoBox.transform.position = new Vector3(viewRect.xMax, viewRect.yMax, 0);
+            potatoBox.transform.position = new Vector3(levelOptions.LevelEndX - 1, viewRect.yMax + spawnersYOffset, 0);
         } 
         else if (boxController.throwDirection == MoveDirection.Down)
         {
-            potatoBox.transform.position = new Vector3(heroTransform.position.x, viewRect.yMax, 0);
+            potatoBox.transform.position = new Vector3(heroTransform.position.x, viewRect.yMax + spawnersYOffset, 0);
         }
     }
 

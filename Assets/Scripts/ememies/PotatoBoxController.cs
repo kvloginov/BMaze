@@ -16,6 +16,8 @@ public class PotatoBoxController : MonoBehaviour
 
     public MoveDirection throwDirection;
 
+    public AudioSource throwSound;
+
     private float nextThrowTime = 0.0f;
 
     void Start()
@@ -42,6 +44,8 @@ public class PotatoBoxController : MonoBehaviour
         MoveScript move = potato.GetComponent<MoveScript>();
     
         move.moveDirection = throwDirection;
+
+        throwSound.Play();
 
         //var viewRect = cameraController.GetViewRectInWorld();
     }
