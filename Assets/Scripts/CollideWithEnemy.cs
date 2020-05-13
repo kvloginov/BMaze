@@ -6,6 +6,8 @@ public class CollideWithEnemy : MonoBehaviour
 
     private ScoreController scoreController;
 
+    public AudioSource dieSound;
+
     public void Start()
     {
         scoreController = GetComponent<ScoreController>();
@@ -18,6 +20,8 @@ public class CollideWithEnemy : MonoBehaviour
         {
             int score = scoreController.GetScore();
             mainMenuGameObject.GetComponent<LoseMenuController>().InvokeMenu(score);
+
+            dieSound.Play();
         }  
     }
 }
