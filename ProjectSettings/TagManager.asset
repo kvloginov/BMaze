@@ -45,3 +45,6 @@ TagManager:
   - name: OnGround
     uniqueID: 2461595311
     locked: 0
+  - name: Hero
+    uniqueID: 563369001
+    locked: 0
