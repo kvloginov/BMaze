@@ -128,6 +128,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 388778812}
     m_Modifications:
+    - target: {fileID: 5215427193994712161, guid: 6f228d6ae4c88ef4b85df86d2eb7b972,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215427193994712161, guid: 6f228d6ae4c88ef4b85df86d2eb7b972,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215427193994712161, guid: 6f228d6ae4c88ef4b85df86d2eb7b972,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5215427194749241944, guid: 6f228d6ae4c88ef4b85df86d2eb7b972,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4055,7 +4070,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: dfdec896701646f4ba49707bfe60ba1f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.091
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
