@@ -48,17 +48,22 @@ public class MapDrawer : MonoBehaviour
 
     private void DrawTiles(Vector3Int drawFrom)
     {
+        // вместо этого проверять "y" последнего отрисованного блока
+        if (groundTilemap.HasTile(drawFrom))
+        {
+            return;
+        }
+
         Vector3Int boundsSize = new Vector3Int(levelOptions.GetWidth(), 1, 1);
         var bounds = new BoundsInt(drawFrom, boundsSize);
 
         var bottomTileArray = GenerateBottomTileArray(levelOptions.GetWidth(), 1);
         var topTileArray = GenerateTopTileArray(levelOptions.GetWidth(), 1);
 
-        if (!groundTilemap.HasTile(drawFrom))
-        {
-            groundTilemap.SetTilesBlock(bounds, bottomTileArray);
-            сollidebleTilemap.SetTilesBlock(bounds, topTileArray);
-        }
+       
+       groundTilemap.SetTilesBlock(bounds, bottomTileArray);
+       сollidebleTilemap.SetTilesBlock(bounds, topTileArray);
+       
     }
 
 

@@ -3547,6 +3547,7 @@ MonoBehaviour:
   LevelStartX: -5
   LevelEndX: 5
   PixelsPerUnit: 16
+  ChunkSize: 64
   MaxLevelScore: 1000
 --- !u!4 &720123238
 Transform:
@@ -5587,7 +5588,7 @@ MonoBehaviour:
   - tag: idol
     prefab: {fileID: 6663309375537603398, guid: 19159bb873eacaf4f8f28b016da43d8b,
       type: 3}
-    size: 30
+    size: 10
 --- !u!4 &2027509204
 Transform:
   m_ObjectHideFlags: 0

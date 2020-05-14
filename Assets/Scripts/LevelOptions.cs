@@ -8,6 +8,7 @@ public class LevelOptions : MonoBehaviour
     public int LevelStartX;
     public int LevelEndX;
     public int PixelsPerUnit;
+    public int ChunkSize = 64;
     
     [Header("Указывает максимально возможное кол-во очков, при котором игра перестанет усложняться по animation curves")]
     [Tooltip("Указывает максимально возможное кол-во очков, при котором игра перестанет усложняться по animation curves")]
