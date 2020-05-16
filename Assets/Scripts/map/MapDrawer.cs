@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Linq.Expressions;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
@@ -30,12 +27,23 @@ public class MapDrawer : MonoBehaviour
     // тайлмап, на котором будем рисовать края уровня
     public Tilemap сollidebleTilemap;
 
+    // uber-optimization
+    // положение персонажа при последнем рисовании новых тайлов
+    private Vector3 lastDrawHeroPos;
+
+    private void Start()
+    {
+        lastDrawHeroPos = hero.transform.position - new Vector3(0, levelOptions.ChunkSize, 0);
+    }
 
     void Update()
     {
-        var drawFrom = GetDrawFrom();
-
-        DrawTiles(drawFrom);
+        // рисуем каждые chunksize юнитов
+        if (Math.Abs(hero.transform.position.y - lastDrawHeroPos.y) > levelOptions.ChunkSize) {
+            lastDrawHeroPos = hero.transform.position;
+            var drawFrom = GetDrawFrom();
+            DrawTiles(drawFrom);
+        }
     }
 
     private Vector3Int GetDrawFrom()
@@ -48,22 +56,20 @@ public class MapDrawer : MonoBehaviour
 
     private void DrawTiles(Vector3Int drawFrom)
     {
-        // вместо этого проверять "y" последнего отрисованного блока
-        if (groundTilemap.HasTile(drawFrom))
-        {
-            return;
-        }
+        
+        //if (groundTilemap.HasTile(drawFrom))
+        //{
+        //    return;
+        //}
 
-        Vector3Int boundsSize = new Vector3Int(levelOptions.GetWidth(), 1, 1);
-        var bounds = new BoundsInt(drawFrom, boundsSize);
+        Vector3Int boundsSize = new Vector3Int(levelOptions.GetWidth(), levelOptions.ChunkSize, 1);
+        BoundsInt bounds = new BoundsInt(drawFrom, boundsSize);
 
-        var bottomTileArray = GenerateBottomTileArray(levelOptions.GetWidth(), 1);
-        var topTileArray = GenerateTopTileArray(levelOptions.GetWidth(), 1);
-
+        var bottomTileArray = GenerateBottomTileArray(levelOptions.GetWidth(), levelOptions.ChunkSize);
+        var topTileArray = GenerateTopTileArray(levelOptions.GetWidth(), levelOptions.ChunkSize);
        
        groundTilemap.SetTilesBlock(bounds, bottomTileArray);
        сollidebleTilemap.SetTilesBlock(bounds, topTileArray);
-       
     }
 
 
