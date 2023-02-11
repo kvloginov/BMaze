@@ -1,7 +1,7 @@
 # BMaze
 A simple runner game developed with Unity
 
-![](https://github.com/kvloginov/BMaze/docs/gameplay.gif)
+![](https://github.com/kvloginov/BMaze/blob/master/docs/gameplay.gif)
 
 ## What interesting
 * Start menu with specially composed music
